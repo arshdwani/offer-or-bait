@@ -53,7 +53,8 @@
       <p class="legend"><span class="hl hl-stop">stop sign</span> <span class="hl hl-warn">warning</span> <span class="hl hl-note">worth noticing</span> &nbsp;Tap a highlight to jump to why.</p>
 
       <h2 id="sigHead">What each highlight means</h2>
-      <ol class="signals" id="signals"></ol>
+      <div id="signals"></div>
+      <p id="skipped" class="skipped" hidden></p>
 
       <h2>Your next move</h2>
       <ul class="steps" id="steps"></ul>
@@ -61,7 +62,7 @@
       <div class="reply">
         <h2>A safe reply</h2>
         <p class="fine">A real recruiter can answer this in two minutes. A scammer usually goes quiet or pushes harder.</p>
-        <textarea id="replyText" rows="8" readonly></textarea>
+        <textarea id="replyText" rows="12" readonly></textarea>
         <button id="copy" class="btn" type="button">Copy reply</button>
       </div>
 
@@ -70,7 +71,7 @@
 
     <section class="about">
       <h2>How it works</h2>
-      <p>Fifteen checks look for the patterns the FTC and university fraud offices warn about: fake checks, fees to start, chat-app interviews, requests for ID or bank details, money and package forwarding, personal or lookalike email addresses, and pressure to hurry. Every check is a plain rule that runs in your browser. There is no AI and no server, so the message never leaves your device.</p>
+      <p><span id="ruleCount">17</span> checks look for the patterns the FTC and university fraud offices warn about: fake checks, fees to start, chat-app interviews, requests for ID or bank details, money and package forwarding, personal or lookalike email addresses, requests to move to your personal email or to text, and pressure to hurry. Every check is a plain rule that runs in your browser. There is no AI and no server, so the message never leaves your device.</p>
       <p>It finds signals, not proof. A clean result means none of the usual tricks showed up. Still apply through the company's own careers site, and never pay or deposit anything to get a job.</p>
     </section>
 
