@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <title>Offer or Bait? · Job scam checker</title>
+  <meta name="description" content="Paste a job message you got. See the lines a scammer would write, why, and what a real employer does instead. Runs in your browser; nothing is sent.">
+  <meta name="theme-color" content="#f5f1e8">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <a class="brand" href="./" aria-label="Offer or Bait? home">
+        <svg class="hook" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" class="hook-bg"/><path d="M18 6v12.5a5 5 0 0 1-10 0V16l-2.5 2.5" class="hook-line"/><circle cx="18" cy="6" r="1.6" class="hook-eye"/></svg>
+        <span>Offer or Bait?</span>
+      </a>
+      <span class="badge" title="Nothing you paste leaves this page">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>
+        Runs on this page only
+      </span>
+    </header>
+
+    <h1>Is this job offer real?</h1>
+    <p class="lede">Paste the email, text or DM you got. You'll see the lines a scammer would write, why they write them, and what a real employer does instead.</p>
+
+    <section class="input" aria-label="Your message">
+      <label for="msg" class="label">The message you got</label>
+      <textarea id="msg" rows="9" spellcheck="false" placeholder="Paste the whole message here, including the sender's email address if there is one."></textarea>
+      <p id="err" class="err" role="alert" hidden></p>
+      <button id="go" class="btn primary" type="button">Check this message</button>
+      <div class="examples">
+        <span>Or try an example:</span>
+        <button type="button" class="chip" data-ex="check">Fake check</button>
+        <button type="button" class="chip" data-ex="chat">Chat-app interview</button>
+        <button type="button" class="chip" data-ex="real">Real recruiter</button>
+      </div>
+      <p class="fine">Nothing is uploaded or saved. Refreshing the page clears it.</p>
+    </section>
+
+    <section id="result" class="result" hidden aria-live="polite">
+      <div id="verdict" class="verdict">
+        <div class="v-word" id="vWord"></div>
+        <p class="v-line" id="vLine"></p>
+        <div class="v-counts" id="vCounts"></div>
+      </div>
+
+      <h2>The message, marked up</h2>
+      <p id="trunc" class="fine" hidden></p>
+      <div class="letter" id="letter"></div>
+      <p class="legend"><span class="hl hl-stop">stop sign</span> <span class="hl hl-warn">warning</span> <span class="hl hl-note">worth noticing</span> &nbsp;Tap a highlight to jump to why.</p>
+
+      <h2 id="sigHead">What each highlight means</h2>
+      <ol class="signals" id="signals"></ol>
+
+      <h2>Your next move</h2>
+      <ul class="steps" id="steps"></ul>
+
+      <div class="reply">
+        <h2>A safe reply</h2>
+        <p class="fine">A real recruiter can answer this in two minutes. A scammer usually goes quiet or pushes harder.</p>
+        <textarea id="replyText" rows="8" readonly></textarea>
+        <button id="copy" class="btn" type="button">Copy reply</button>
+      </div>
+
+      <button id="again" class="btn ghost" type="button">Check another message</button>
+    </section>
+
+    <section class="about">
+      <h2>How it works</h2>
+      <p>Fifteen checks look for the patterns the FTC and university fraud offices warn about: fake checks, fees to start, chat-app interviews, requests for ID or bank details, money and package forwarding, personal or lookalike email addresses, and pressure to hurry. Every check is a plain rule that runs in your browser. There is no AI and no server, so the message never leaves your device.</p>
+      <p>It finds signals, not proof. A clean result means none of the usual tricks showed up. Still apply through the company's own careers site, and never pay or deposit anything to get a job.</p>
+    </section>
+
+    <footer class="foot">
+      <span>Made by <a href="https://arshdwani.github.io/">Arshd Wani</a></span>
+      <span><a href="https://github.com/arshdwani/offer-or-bait">Source</a></span>
+      <span id="ver"></span>
+    </footer>
+  </main>
+  <script src="rules.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
