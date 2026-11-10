@@ -205,9 +205,10 @@
   $('ver').textContent = OB.version;
   $('ruleCount').textContent = OB.RULES.length;
 
-  // ?example=check|chat|real loads an example (used for screenshots and demo links).
-  var ex = new URLSearchParams(location.search).get('example');
-  if (ex && EXAMPLES[ex]) { msg.value = EXAMPLES[ex]; run(false); }
   var th = new URLSearchParams(location.search).get('theme');
   if (th === 'light' || th === 'dark') document.documentElement.setAttribute('data-theme', th);
+
+  // ?example=check|chat|real loads an example (used for screenshots and demo links).
+  var ex = new URLSearchParams(location.search).get('example');
+  if (ex && EXAMPLES[ex]) { msg.value = EXAMPLES[ex]; run(false); $('verdict').scrollIntoView({ block: 'start' }); }
 })();
